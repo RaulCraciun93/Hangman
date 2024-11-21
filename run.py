@@ -30,6 +30,31 @@ def display_progress(word, guessed_letters):
     Join the list into a spaced string.
     """
 
+def get_player_guess(guessed_letters):
+    """
+    Function to get a valid letter guess from the player.
+    """
+
+    while True:
+        guess = input("Enter a letter (or type 'exit' to quit): ").lower().strip()
+
+        # Check if the player wants to exit/quit.
+        if guess == "exit":
+            print("Thanks for playing!")
+            exit()
+
+        if len(guess) != 1 or not guess.isalpha():
+            print("Invalid input! Enter a single letter.")
+        elif guess in guessed_letters:
+            print("You already guessed that letter!")
+        else:
+            return guess
+    """
+    Ask the player for a letter and validate the input.
+    Ensure it's a single letter.
+    Ensure the letter hasn't been guessed already.
+    """
+
 def main():
     """
     Main function to run the Hangman game.
@@ -39,16 +64,28 @@ def main():
 
     chosen_word = choose_word()
     print(f"The chosen word (for testing): {chosen_word}\n")
-
+    
+    guessed_letters = set()
     """
     Create an empty set of guessed letters
     """
-    guessed_letters = set()
-
+    
+    progress = display_progress(chosen_word, guessed_letters)
+    print(f"Word progress: {progress}")
     """
     Display the initial word progress(underscores).
     """
-    progress = display_progress(chosen_word, guessed_letters)
-    print(f"Word progress: {progress}")
+
+    while True:
+        # Get player's guess.
+        player_guess = get_player_guess(guessed_letters)
+
+        # Add the guess to the set of guest letters.
+        guessed_letters.add(player_guess)
+
+        # Update and display.
+        progress = display_progress(chosen_word, guessed_letters)
+        print(f"Word progress: {progress}")
+    
 
 main()
