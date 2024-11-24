@@ -48,7 +48,7 @@ def get_player_guess(guessed_letters):
         if len(guess) != 1 or not guess.isalpha():
             print("Invalid input! Enter a single letter.")
         elif guess in guessed_letters:
-            print("You already guessed '{guess}'. ")
+            print(f"You already guessed '{guess}'. ")
             # This is a repeated guess.
             return None
         else:
@@ -90,8 +90,8 @@ def main():
 
         # If guess is a repeat show progress and skip processing.
         if player_guess is None:
-            progress = display_progress(chosen_word, guessed_letters)
-            print(f"Word progress: {progress}")
+            print(f"You already guessed that letter!")
+            print(f"Word progress: {display_progress(chosen_word, guessed_letters)}")
             continue
 
         # Add the guess to the set of guest letters.
