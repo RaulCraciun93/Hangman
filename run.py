@@ -23,14 +23,17 @@ def display_progress(word, guessed_letters):
     Guessed letters are revealed in their correct position.
     Unguessed letters are shown as "_".
     """
-    progress = [letter if letter in guessed_letters else "_" for letter in word]
-    """
-    For each letter in the word, show it if guessed, otherwise show "_".
-    """
+    progress = []
+
+    for letter in word: 
+        if letter in guessed_letters:
+            progress.append(letter)
+        else:
+            progress.append("_")   
+    
+    # For each letter in the word, show it if guessed, otherwise show "_".
     return " ".join(progress)
-    """
-    Join the list into a spaced string.
-    """
+    # Join the list into a spaced string.
 
 def get_player_guess(guessed_letters):
     """
