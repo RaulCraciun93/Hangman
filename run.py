@@ -95,7 +95,6 @@ def main():
     print(f"Word progress: {progress}")
 
     while True:
-        clear()
         # Show remaining attempts
         print(f"Remaining attempts: {remaining_attempts}")
 
