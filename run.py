@@ -1,9 +1,11 @@
-
+# Import the random module to select a random word.
 import random
-"""
-Import the random module to select a random word
-"""
 
+# Import for terminal clearing.
+import os
+
+# Import for colored output.
+from colorama import Fore, Style
 
 WORD_BANK = ["python", "hangman", "game", "programming", "project", "developer"]
 """
@@ -11,11 +13,20 @@ Word bank for the game,
 This list contains the words that our game will randomly choose from.
 """
 
+
+def clear():
+    """
+    Clear function to clean-up the terminal so things don't get messy.
+    """
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 def choose_word():
     """
     Randomly choose a word from the word bank.
     """
     return random.choice(WORD_BANK)
+
 
 def display_progress(word, guessed_letters):
     """
@@ -24,16 +35,15 @@ def display_progress(word, guessed_letters):
     Unguessed letters are shown as "_".
     """
     progress = []
-
-    for letter in word: 
+    for letter in word:
         if letter in guessed_letters:
             progress.append(letter)
         else:
-            progress.append("_")   
-    
-    # For each letter in the word, show it if guessed, otherwise show "_".
+            progress.append("_")
+
     return " ".join(progress)
     # Join the list into a spaced string.
+
 
 def get_player_guess(guessed_letters):
     """
@@ -62,29 +72,30 @@ def get_player_guess(guessed_letters):
     Ensure the letter hasn't been guessed already.
     """
 
+
 def main():
     """
     Main function to run the Hangman game.
     """
+    clear()
     print("Welcome to Hangman!")
     print("Game is starting. Stay tuned!")
 
     chosen_word = choose_word()
     print(f"The chosen word (for testing): {chosen_word}\n")
-    
+
+    # Create an empty set of guessed letters
     guessed_letters = set()
-    """
-    Create an empty set of guessed letters
-    """
-    remaining_attempts = 6
     
+    remaining_attempts = 6
+
     progress = display_progress(chosen_word, guessed_letters)
+
+    # Display the initial progress(underscores).
     print(f"Word progress: {progress}")
-    """
-    Display the initial progress(underscores).
-    """
 
     while True:
+        clear()
         # Show remaining attempts
         print(f"Remaining attempts: {remaining_attempts}")
 
@@ -102,9 +113,9 @@ def main():
 
         # Check if the guess is in the chosen word.
         if player_guess in chosen_word:
-            print(f"Good guess! '{player_guess}' is in the word.")
+            print(Fore.GREEN + f"Good guess! '{player_guess}' is in the word." + Style.RESET_ALL)
         else:
-            print(f"Oh no! '{player_guess}' is not in the word.")
+            print(Fore.RED + f"Oh no! '{player_guess}' is not in the word." + Style.RESET_ALL)
             remaining_attempts -= 1
 
         # Update and display.
@@ -113,12 +124,12 @@ def main():
 
         # Check for win condition.
         if "_" not in progress:
-            print(f"Well done! you guessed the word: {chosen_word}")
+            print(Fore.YELLOW + f"Well done! you guessed the word: {chosen_word}" + Style.RESET_ALL)
             break
         # Check for lose condition.
         if remaining_attempts == 0:
-            print(f"Game Over! The word was: {chosen_word}")
+            print(Fore.RED + f"Game Over! The word was: {chosen_word}" + Style.RESET_ALL)
             break
-    
+
 
 main()
