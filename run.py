@@ -51,17 +51,17 @@ def get_player_guess(guessed_letters):
     """
 
     while True:
-        guess = input("Enter a letter (or type 'exit' to quit): ").lower().strip()
+        guess = input(Fore.CYAN + "Enter a letter (or type 'exit' to quit): " + Style.RESET_ALL).lower().strip()
 
         # Check if the player wants to exit/quit.
         if guess == "exit":
-            print("Thanks for playing!")
+            print(Fore.YELLOW + "Thanks for playing!" + Style.RESET_ALL)
             exit()
 
         if len(guess) != 1 or not guess.isalpha():
-            print("Invalid input! Enter a single letter.")
+            print(Fore.RED + "Invalid input! Enter a single letter." + Style.RESET_ALL)
         elif guess in guessed_letters:
-            print(f"You already guessed '{guess}'. ")
+            print(Fore.BLUE + f"You already guessed '{guess}'. " + Style.RESET_ALL)
             # This is a repeated guess.
             return None
         else:
@@ -77,26 +77,31 @@ def main():
     """
     Main function to run the Hangman game.
     """
+  
     clear()
-    print("Welcome to Hangman!")
-    print("Game is starting. Stay tuned!")
+    print(Fore.CYAN + "Welcome to Hangman!\n" + Style.RESET_ALL)
+    print("Game is starting. Stay tuned!\n")
+    print("Game Rules:\n")
+    print("- Guess one letter at a time to get the word.")
+    print("- You have 6 attempts to guess the word.")
+    print("- Enter 'exit' anytime to quit the game.\n")
 
     chosen_word = choose_word()
     print(f"The chosen word (for testing): {chosen_word}\n")
 
     # Create an empty set of guessed letters
     guessed_letters = set()
-    
+
     remaining_attempts = 6
 
     progress = display_progress(chosen_word, guessed_letters)
 
     # Display the initial progress(underscores).
-    print(f"Word progress: {progress}")
+    print(f"Word progress: {progress}\n")
 
     while True:
         # Show remaining attempts
-        print(f"Remaining attempts: {remaining_attempts}")
+        print(f"Remaining attempts: {remaining_attempts}\n")
 
         # Get player's guess.
         player_guess = get_player_guess(guessed_letters)
