@@ -1,32 +1,38 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman Game
 
-Welcome,
+Welcome to the Hangman Game! This is a Python command-line application where players guess a randomly chosen word one letter at a time.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+## Table of Contents
 
-## Reminders
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [How to Play](#how-to-play)
+5. [Testing](#testing)
+6. [Screenshots](#screenshots)
+7. [Deployment](#deployment)
+8. [Future Enhancements](#future-enhancements)
+9. [Credits](#credits)
+10. [Acknowledgements](#acknowledgements)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+### Project Overview
 
-## Creating the Heroku app
+The Hangman game is a classic word-guessing game where players aim to guess a hidden word by suggesting letters within a limited number of attempts. This project demonstrates fundamental programming concepts such as:
+* Input validation
+* Conditional logic
+* Iteration
+* Use external libraries for styling the terminal
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- **Random word selection**: A random word is chosen from a predefined word bank.
+- **Player guess input**: Players can guess one letter at a time.
+- **Word progress**: Display the word with guessed letters revealed and underscores for unguessed letters.
+- **Remaining attempts**: Track and display the number of attempts left.
+- **Win/Lose condition**: The game ends when the player guesses the word or runs out of attempts.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Technologies Used
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- **Python 3**: Programming language.
+- **Colorama**: For colored text to the terminal.
 
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
