@@ -62,7 +62,18 @@ The Hangman game is a classic word-guessing game where players aim to guess a hi
 
 ### Screenshots
 
-
+**Main Interface** ![screenshot main](assets/readme-images/hangman.heroku.png)
+**Game View in Terminal** ![terminal screenshot](assets/readme-images/game.starting.terminal.png)
+**Linter Error/Warning** ![linter error screenshot](assets/readme-images/errors.hangman.linter.png)
+**Fix Linter Error/Warning** ![linter warning fixed screenshot](assets/readme-images/fix.errors.linter.png)
+**Colorama Error** ![colorama error screenshot](assets/readme-images/error.hangman.colorama.png)
+**Fix Colorama Error** ![colorama error fixed screenshot](assets/readme-images/colorama.fixed.png)
+**Replay Function Error** ![function error screenshot](assets/readme-images/error.hangman.replay.function.png)
+**Valid Input Feedback** ![valid input feedback screenshot](assets/readme-images/valid.input.feedback.png)
+**Invalid Input Feedback** ![invalid input feedback](assets/readme-images/invalid.input.feedback.png)
+**Same Guess Feedback** ![same guess feedback screenshot](assets/readme-images/same.guess.feedback.png)
+**Win Game Feedback** ![win game feedback screenshot](assets/readme-images/win.game.feedback.png)
+**Lose Game Feedback** ![lose game feedback screenshot](assets/readme-images/lose.game.feedback.png)
 
 ### Deployment
 
@@ -86,7 +97,7 @@ This application was deloyed on [Heroku](https://www.heroku.com/) using the foll
 ### Acknowledgements
 
 I would like to express my gratitude to:
-- My mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his valueble guidance, insights, and encouragement throughout this project.
+- My mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his valuable guidance, insights, and encouragement throughout this project.
 - [Code Institute](https://codeinstitute.net/) for providing a learning environment and resources necessary for this project.
 - The [Code Institute Tutor Support Team](https://learn.codeinstitute.net/ci_support/disdcc_3/support) for technical assistance whenever I faced challanges.
 - The [Code Institute Slack community](https://code-institute-room.slack.com) for extra support and offering solutions to common problems.
