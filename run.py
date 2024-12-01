@@ -7,7 +7,10 @@ import os
 # Import for colored output.
 from colorama import Fore, Style
 
-WORD_BANK = ["python", "hangman", "game", "programming", "project", "developer"]
+WORD_BANK = [
+    "python", "hangman", "game", "programming", "project",
+    "developer", "coding", "student", "learning"
+]
 """
 Word bank for the game,
 This list contains the words that our game will randomly choose from.
@@ -51,7 +54,10 @@ def get_player_guess(guessed_letters):
     """
 
     while True:
-        guess = input(Fore.CYAN + "Enter a letter (or type 'exit' to quit): " + Style.RESET_ALL).lower().strip()
+        guess = input(
+            Fore.CYAN + "Enter a letter (or type 'exit' to quit): "
+            + Style.RESET_ALL
+        ).lower().strip()
 
         # Check if the player wants to exit/quit.
         if guess == "exit":
@@ -59,9 +65,16 @@ def get_player_guess(guessed_letters):
             exit()
 
         if len(guess) != 1 or not guess.isalpha():
-            print(Fore.RED + "Invalid input! Enter a single letter." + Style.RESET_ALL)
+            print(
+                Fore.RED + "Invalid input! Enter a single letter."
+                + Style.RESET_ALL
+            )
         elif guess in guessed_letters:
-            print(Fore.BLUE + f"You already guessed '{guess}'. " + Style.RESET_ALL)
+            print(
+                Fore.BLUE + f"You already guessed '{guess}'. "
+                + Style.RESET_ALL
+            )
+
             # This is a repeated guess.
             return None
         else:
@@ -77,7 +90,7 @@ def main():
     """
     Main function to run the Hangman game.
     """
-  
+
     clear()
     print(Fore.CYAN + "Welcome to Hangman!\n" + Style.RESET_ALL)
     print("Game is starting. Stay tuned!\n")
@@ -109,7 +122,10 @@ def main():
         # If guess is a repeat show progress and skip processing.
         if player_guess is None:
             print(f"You already guessed that letter!")
-            print(f"Word progress: {display_progress(chosen_word, guessed_letters)}")
+
+            # Store the progress in a var to keep the print statement shorter.
+            progress_display = display_progress(chosen_word, guessed_letters)
+            print(f"Word progress: {progress_display}")
             continue
 
         # Add the guess to the set of guest letters.
@@ -117,9 +133,15 @@ def main():
 
         # Check if the guess is in the chosen word.
         if player_guess in chosen_word:
-            print(Fore.GREEN + f"Good guess! '{player_guess}' is in the word." + Style.RESET_ALL)
+            print(
+                Fore.GREEN + f"Good guess! '{player_guess}' is in the word."
+                + Style.RESET_ALL
+            )
         else:
-            print(Fore.RED + f"Oh no! '{player_guess}' is not in the word." + Style.RESET_ALL)
+            print(
+                Fore.RED + f"Oh no! '{player_guess}' is not in the word."
+                + Style.RESET_ALL
+            )
             remaining_attempts -= 1
 
         # Update and display.
@@ -128,11 +150,17 @@ def main():
 
         # Check for win condition.
         if "_" not in progress:
-            print(Fore.YELLOW + f"Well done! you guessed the word: {chosen_word}" + Style.RESET_ALL)
+            print(
+                Fore.YELLOW + f"Well done! you guessed the word: {chosen_word}"
+                + Style.RESET_ALL
+            )
             break
         # Check for lose condition.
         if remaining_attempts == 0:
-            print(Fore.RED + f"Game Over! The word was: {chosen_word}" + Style.RESET_ALL)
+            print(
+                Fore.RED + f"Game Over! The word was: {chosen_word}"
+                + Style.RESET_ALL
+            )
             break
 
 
