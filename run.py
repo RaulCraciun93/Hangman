@@ -96,7 +96,7 @@ def main():
     print("Game is starting. Stay tuned!\n")
     print("Game Rules:\n")
     print("- Guess one letter at a time to get the word.")
-    print("- You have 6 attempts to guess the word.")
+    print("- You have 10 attempts to guess the word.")
     print("- Enter 'exit' anytime to quit the game.\n")
 
     chosen_word = choose_word()
@@ -106,7 +106,7 @@ def main():
     # Create an empty set of guessed letters
     guessed_letters = set()
 
-    remaining_attempts = 6
+    remaining_attempts = 10
 
     progress = display_progress(chosen_word, guessed_letters)
 
@@ -173,4 +173,5 @@ def main():
             break
 
 
-main()
+if __name__ == "__main__":
+    main()

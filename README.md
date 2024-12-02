@@ -11,8 +11,9 @@ Welcome to the Hangman Game! This is a Python command-line application where pla
 5. [Testing](#testing)
 6. [Screenshots](#screenshots)
 7. [Deployment](#deployment)
-8. [Credits](#credits)
-9. [Acknowledgements](#acknowledgements)
+8. [Future Enhancements](#future-enhancements)
+9. [Credits](#credits)
+10. [Acknowledgements](#acknowledgements)
 
 ### Project Overview
 
@@ -33,7 +34,7 @@ The Hangman game is a classic word-guessing game where players aim to guess a hi
 ### Technologies Used
 
 - **Python 3**: Programming language.
-- **Colorama**: For colored text to the terminal.
+- **Colorama**: Enables adding colors to terminal text for better user experience. Provides feedback on valid inputs, invalid inputs and game outcomes.
 
 ### How to Play
 
@@ -77,13 +78,19 @@ The Hangman game is a classic word-guessing game where players aim to guess a hi
 
 ### Deployment
 
-This application was deloyed on [Heroku](https://www.heroku.com/) using the following steps:
+This application was deployed on [Heroku](https://www.heroku.com/) using the following steps:
 1. Ensure the requirements.txt is up to date: pip freeze > requirements.txt
 2. Create a new Heroku app and connect your GitHub repository.
 3. Add the following buildpacks in this order:
 - heroku/python
 - heroku/nodejs (required for Code Institute's template)
 4. Deploy the app and test if it works.
+
+### Future Enhancements
+
+- **Replay Option**: Allows the player to restart the game without relaunching the application.
+- **Difficulty Levels**: Add multiple difficulty levels like different word lengths or attempt limits.
+- **Score Tracking**: Add a scoring system to track player performance across games.
 
 ### Credits
 
@@ -99,5 +106,5 @@ This application was deloyed on [Heroku](https://www.heroku.com/) using the foll
 I would like to express my gratitude to:
 - My mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his valuable guidance, insights, and encouragement throughout this project.
 - [Code Institute](https://codeinstitute.net/) for providing a learning environment and resources necessary for this project.
-- The [Code Institute Tutor Support Team](https://learn.codeinstitute.net/ci_support/disdcc_3/support) for technical assistance whenever I faced challanges.
+- The [Code Institute Tutor Support Team](https://learn.codeinstitute.net/ci_support/disdcc_3/support) for technical assistance whenever I faced challenges.
 - The [Code Institute Slack community](https://code-institute-room.slack.com) for extra support and offering solutions to common problems.
