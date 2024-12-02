@@ -155,11 +155,19 @@ def main():
                 Fore.YELLOW + f"Well done! you guessed the word: {chosen_word}"
                 + Style.RESET_ALL
             )
+            print(
+                Fore.CYAN + "Thank you for playing Hangman, Goodbye!"
+                + Style.RESET_ALL
+            )
             break
         # Check for lose condition.
         if remaining_attempts == 0:
             print(
                 Fore.RED + f"Game Over! The word was: {chosen_word}"
+                + Style.RESET_ALL
+            )
+            print(
+                Fore.CYAN + "Thank you for playing Hangman, Goodbye!"
                 + Style.RESET_ALL
             )
             break
