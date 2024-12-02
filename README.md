@@ -1,6 +1,6 @@
 # Hangman Game
 
-Welcome to the Hangman Game! This is a Python command-line application where players guess a randomly chosen word one letter at a time.
+Welcome to the Hangman Game! This is a Python command-line application where players guess a randomly chosen word one letter at a time until they reveal the full word.
 
 ## Table of Contents
 

@@ -100,7 +100,8 @@ def main():
     print("- Enter 'exit' anytime to quit the game.\n")
 
     chosen_word = choose_word()
-    print(f"The chosen word (for testing): {chosen_word}\n")
+    # Comment or remove this line before deployment.
+    # print(f"The chosen word (for testing): {chosen_word}\n")
 
     # Create an empty set of guessed letters
     guessed_letters = set()
